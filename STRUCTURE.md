@@ -10,9 +10,13 @@ todo-backend/
 │   │   └── db.js
 │   └── app.js
 ├── .env
+├── .env.example
 ├── .dockerignore
+├── .gitignore
 ├── Dockerfile
-├── docker-compose.yml
+├── docker-compose.yaml
 ├── package.json
-└── README.md
+├── README.md
+├── STRUCTURE.md
+└── TESTING.md
 ```
