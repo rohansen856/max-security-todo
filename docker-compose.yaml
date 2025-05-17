@@ -1,9 +1,10 @@
 version: '3'
 services:
   db:
-    image: postgres:13
-    container_name: postgres
+    image: postgres:16
+    container_name: secure-todo-db
     environment:
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
       POSTGRES_DB: tododb
     volumes:
@@ -13,13 +14,13 @@ services:
 
   app:
     build: .
-    container_name: todo-backend
+    container_name: secure-todo-backend
     ports:
       - "3000:3000"
     depends_on:
       - db
     environment:
-      - PGHOST=postgres
+      - PGHOST=localhost
       - PGUSER=postgres
       - PGPASSWORD=password
       - PGDATABASE=tododb
