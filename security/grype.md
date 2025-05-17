@@ -24,3 +24,18 @@ grype dir:./
 [0000]  WARN no explicit name and version provided for directory source, deriving artifact ID from the given path (which is not ideal)
 No vulnerabilities found
 ```
+
+### Command
+
+```sh
+grype sbom:syft.json
+```
+
+### Output
+
+```sh
+ ✔ Scanned for vulnerabilities     [0 vulnerability matches]
+   ├── by severity: 0 critical, 0 high, 0 medium, 0 low, 0 negligible
+   └── by status:   0 fixed, 0 not-fixed, 0 ignored
+No vulnerabilities found
+```
