@@ -1,7 +1,8 @@
-version: '3'
+version: "3"
 services:
   db:
     image: postgres:16
+    restart: no
     container_name: secure-todo-db
     environment:
       POSTGRES_USER: postgres
@@ -15,6 +16,7 @@ services:
   app:
     build: .
     container_name: secure-todo-backend
+    restart: no
     ports:
       - "3000:3000"
     depends_on:
