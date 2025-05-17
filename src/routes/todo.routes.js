@@ -8,8 +8,8 @@ router.get('/', (req, res) => {
 
 router.get('/todos', todoController.getTodos);
 router.post('/todos', todoController.addTodo);
-router.get('/todo/:id', controller.getTodoById);
-router.delete('/todo/:id', controller.deleteTodoById);
-router.put('/todo/:id', controller.updateTodoById);
+router.get('/todo/:id', todoController.getTodoById);
+router.delete('/todo/:id', todoController.deleteTodoById);
+router.put('/todo/:id', todoController.updateTodoById);
 
 module.exports = router;
