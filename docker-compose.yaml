@@ -1,0 +1,30 @@
+version: '3'
+services:
+  db:
+    image: postgres:13
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: tododb
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    container_name: todo-backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - PGHOST=postgres
+      - PGUSER=postgres
+      - PGPASSWORD=password
+      - PGDATABASE=tododb
+      - PGPORT=5432
+    command: ["npm", "start"]
+
+volumes:
+  dbdata:
